@@ -17,6 +17,14 @@ Automatically fixes event colors in a shared Google Family calendar using keywor
 - Google Cloud project with Calendar API enabled
 - OAuth client credentials file (`credentials.json`, desktop app type)
 
+### OAuth scopes (important)
+
+This app uses **`https://www.googleapis.com/auth/calendar`** (full Calendar access) so it can **list/patch events** and call **`colors.get()`** for `--print-colors`. Narrow scopes like `calendar.events` alone are **not** enough for the Colors API and return **403 insufficientPermissions**.
+
+In **Google Cloud Console** → **APIs & Services** → **OAuth consent screen** → **Edit app** → **Scopes** → **Add or remove scopes**, include **Google Calendar API** → *See, edit, share, and permanently delete all the calendars you can access using Google Calendar* (`.../auth/calendar`).
+
+After changing scopes, **delete** `.secrets/token.json` (or your `google.token_file`) and run again so the browser asks for the updated permissions.
+
 ## 2) Setup
 
 1. Copy config:
