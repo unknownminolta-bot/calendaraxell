@@ -19,6 +19,8 @@ classification:
     - studies
     - travel
     - visits
+    - birthday
+    - work
   categories:
     studies:
       color_name: "grape"
@@ -29,6 +31,11 @@ classification:
         - "homework"
         - "exam"
         - "assignment"
+        - "lab"
+        - "university"
+        - "college"
+        - "application"
+        - "enrollment"
       exclude_keywords: []
     preschool:
       color_name: "basil"
@@ -48,6 +55,7 @@ classification:
         - "flight"
         - "train"
         - "hotel"
+        - "weekend"
       exclude_keywords: []
     visits:
       color_name: "flamingo"
@@ -57,6 +65,19 @@ classification:
         - "visiting"
         - "guest"
         - "family visit"
+      exclude_keywords: []
+    birthday:
+      color_name: "banana"
+      color_id: "5"
+      include_keywords:
+        - "birthday"
+      exclude_keywords: []
+    work:
+      color_name: "blueberry"
+      color_id: "9"
+      include_keywords:
+        - "work"
+        - "day off"
       exclude_keywords: []
 
 # Optional. If set, only events from these organizer emails are considered.

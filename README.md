@@ -8,6 +8,8 @@ Automatically fixes event colors in a shared Google Family calendar using keywor
 - Basil -> Pre-school related events and reminders
 - Tangerine -> Travelling
 - Flamingo -> Visits
+- Banana -> Birthdays
+- Blueberry -> Work and time off
 
 `config.example.yaml` maps these categories to Google event `color_id` values. Adjust IDs after checking your account's palette.
 
