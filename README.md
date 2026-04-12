@@ -63,6 +63,12 @@ Install with:
 
 The script includes a lock file (`run.lock_file`) so overlapping cron runs are skipped safely.
 
+## 6) Run Tests
+
+Run the unit tests for classification logic:
+
+`python3 -m unittest discover -s tests -v`
+
 ## Rule Behavior
 
 - Matches against event title, description, and location
