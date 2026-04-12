@@ -5,9 +5,9 @@ Automatically fixes event colors in a shared Google Family calendar using keywor
 ## Category Mapping
 
 - Grape -> Studies
-- Green -> Pre-school related events and reminders
-- Peach -> Travelling
-- Lavender -> Visits
+- Basil -> Pre-school related events and reminders
+- Tangerine -> Travelling
+- Flamingo -> Visits
 
 `config.example.yaml` maps these categories to Google event `color_id` values. Adjust IDs after checking your account's palette.
 

@@ -31,7 +31,7 @@ classification:
         - "assignment"
       exclude_keywords: []
     preschool:
-      color_name: "green"
+      color_name: "basil"
       color_id: "10"
       include_keywords:
         - "preschool"
@@ -40,7 +40,7 @@ classification:
         - "school reminder"
       exclude_keywords: []
     travel:
-      color_name: "peach"
+      color_name: "tangerine"
       color_id: "6"
       include_keywords:
         - "travel"
@@ -50,8 +50,8 @@ classification:
         - "hotel"
       exclude_keywords: []
     visits:
-      color_name: "lavender"
-      color_id: "1"
+      color_name: "flamingo"
+      color_id: "4"
       include_keywords:
         - "visit"
         - "visiting"
