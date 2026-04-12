@@ -5,3 +5,5 @@ __pycache__/
 cron.log
 config.yaml
 credentials.json
+client_secret*.json
+secret.json
