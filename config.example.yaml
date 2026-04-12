@@ -1,0 +1,64 @@
+# Copy this file to config.yaml and customize values.
+google:
+  calendar_id: "your_family_calendar_id@group.calendar.google.com"
+  credentials_file: "credentials.json"
+  token_file: ".secrets/token.json"
+
+window_days:
+  past: 30
+  future: 365
+
+run:
+  dry_run: true
+  lock_file: ".run/color-fixer.lock"
+
+classification:
+  # First match in this list wins if multiple categories match.
+  priority:
+    - preschool
+    - studies
+    - travel
+    - visits
+  categories:
+    studies:
+      color_name: "grape"
+      color_id: "3"
+      include_keywords:
+        - "study"
+        - "studies"
+        - "homework"
+        - "exam"
+        - "assignment"
+      exclude_keywords: []
+    preschool:
+      color_name: "green"
+      color_id: "10"
+      include_keywords:
+        - "preschool"
+        - "kindergarten"
+        - "daycare"
+        - "school reminder"
+      exclude_keywords: []
+    travel:
+      color_name: "peach"
+      color_id: "6"
+      include_keywords:
+        - "travel"
+        - "trip"
+        - "flight"
+        - "train"
+        - "hotel"
+      exclude_keywords: []
+    visits:
+      color_name: "lavender"
+      color_id: "1"
+      include_keywords:
+        - "visit"
+        - "visiting"
+        - "guest"
+        - "family visit"
+      exclude_keywords: []
+
+# Optional. If set, only events from these organizer emails are considered.
+# allowed_organizers:
+#   - "you@example.com"

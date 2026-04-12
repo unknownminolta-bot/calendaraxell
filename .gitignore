@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.secrets/
+.run/
+cron.log
+config.yaml
