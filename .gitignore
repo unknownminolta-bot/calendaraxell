@@ -4,3 +4,4 @@ __pycache__/
 .run/
 cron.log
 config.yaml
+credentials.json
