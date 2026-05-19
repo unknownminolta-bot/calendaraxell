@@ -15,13 +15,61 @@ run:
 classification:
   # First match in this list wins if multiple categories match.
   priority:
+    - completed_task
     - preschool
     - studies
     - travel
     - visits
     - birthday
     - work
+    - time_off
+    - misc
   categories:
+    completed_task:
+      color_name: "graphite"
+      color_id: "8"
+      all_day_only: true
+      include_keywords:
+        - "klar"
+        - "klart"
+        - "färdig"
+        - "färdigt"
+        - "avklarad"
+        - "avklarat"
+        - "slutförd"
+        - "slutfört"
+        - "gjord"
+        - "gjort"
+        - "fixad"
+        - "fixat"
+        - "ansökt"
+        - "sökt"
+        - "inskickad"
+        - "inskickat"
+        - "bokad"
+        - "bokat"
+        - "betalad"
+        - "betalt"
+        - "done"
+        - "completed"
+        - "complete"
+        - "finished"
+        - "submitted"
+        - "applied"
+        - "paid"
+        - "booked"
+      exclude_keywords:
+        - "att göra"
+        - "todo"
+        - "pågående"
+        - "under behandling"
+        - "väntar"
+        - "ska ansöka"
+        - "ansökan öppen"
+        - "planerar"
+        - "planering"
+        - "pending"
+        - "in progress"
     studies:
       color_name: "grape"
       color_id: "3"
@@ -42,6 +90,7 @@ classification:
       color_id: "10"
       include_keywords:
         - "preschool"
+        - "preschools"
         - "kindergarten"
         - "daycare"
         - "school reminder"
@@ -77,7 +126,20 @@ classification:
       color_id: "9"
       include_keywords:
         - "work"
+      exclude_keywords: []
+    time_off:
+      color_name: "sage"
+      color_id: "2"
+      include_keywords:
         - "day off"
+      exclude_keywords: []
+    misc:
+      color_name: "graphite"
+      color_id: "8"
+      include_keywords:
+        - "car"
+        - "vehicle"
+        - "passport"
       exclude_keywords: []
 
 # Optional. If set, only events from these organizer emails are considered.

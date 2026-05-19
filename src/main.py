@@ -47,6 +47,7 @@ def build_rules(config: Dict) -> Dict[str, CategoryRule]:
             color_id=str(raw["color_id"]),
             include_keywords=list(raw.get("include_keywords", [])),
             exclude_keywords=list(raw.get("exclude_keywords", [])),
+            all_day_only=bool(raw.get("all_day_only", False)),
         )
     return rules
 

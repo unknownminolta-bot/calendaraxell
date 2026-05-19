@@ -88,6 +88,36 @@ Run the unit tests for classification logic:
 - Updates only events in configured date window (`window_days`)
 - Skips cancelled events
 
+## Safety Checklist for Keyword Changes
+
+When you change `include_keywords`, `exclude_keywords`, category priority, or `all_day_only` flags, use this process to avoid unintended recoloring.
+
+1. Update `config.yaml` and mirror the intended behavior in `config.example.yaml`.
+2. Run tests:
+   - `python3 -m unittest discover -s tests -v`
+3. Run a verbose dry run:
+   - `python3 src/main.py --config config.yaml --dry-run --verbose`
+4. Review dry-run output carefully:
+   - Look for known reminder/task events that should change.
+   - Look for real scheduled events that should **not** change.
+   - If any event would be recolored incorrectly, adjust keywords/excludes and repeat dry run.
+5. Only when dry-run output is clean, apply changes:
+   - `python3 src/main.py --config config.yaml --write --verbose`
+6. Spot-check a few target events in Google Calendar UI or API to confirm expected color IDs.
+
+Recommended guardrails:
+- Keep task-completion categories (`completed_task`) `all_day_only: true` to protect timed events.
+- Keep broad, high-risk terms out of `exclude_keywords` unless they are part of a more specific phrase.
+- Prefer explicit status words (e.g. `ansökt`, `inskickad`, `completed`) over ambiguous words.
+
+Quick command block (copy/paste):
+
+`cd /home/maxandersson/family-calendar-color-fixer && source .venv/bin/activate && python3 -m unittest discover -s tests -v && python3 src/main.py --config config.yaml --dry-run --verbose && python3 src/main.py --config config.yaml --write --verbose`
+
+Safe mode (tests + dry-run only):
+
+`cd /home/maxandersson/family-calendar-color-fixer && source .venv/bin/activate && python3 -m unittest discover -s tests -v && python3 src/main.py --config config.yaml --dry-run --verbose`
+
 ## Troubleshooting
 
 - `FileNotFoundError: credentials.json`:
